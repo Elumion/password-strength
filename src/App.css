@@ -1,0 +1,16 @@
+body {
+  background-color: #474747;
+}
+
+.global-container {
+  padding: 0 5px;
+}
+
+.form-password-checker {
+  margin: 20px auto;
+  padding: 10px 15px;
+  width: fit-content;
+  min-width: 400px;
+  border: 1px solid #4e4e4e;
+  background-color: #d3d3d3;
+}
