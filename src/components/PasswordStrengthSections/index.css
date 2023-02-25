@@ -1,0 +1,24 @@
+.password-sections__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.password-section {
+    border-radius: 7px;
+    width: 80px;
+    height: 20px;
+    background-color: #a8a8a8;
+}
+
+.password-section.easy {
+    background-color: #db6161;
+}
+
+.password-section.medium {
+    background-color: #ffff53;
+}
+
+.password-section.hard {
+    background-color: #49cc49;
+}
