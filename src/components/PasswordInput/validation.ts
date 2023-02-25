@@ -7,32 +7,32 @@ export function validatePassword(value: string): SectionsStrength {
   //---EASY---
 
   // symbols only
-  if (!!value.match(/^[^A-Za-z0-9]*$/)) return SectionsStrength.EASY;
+  if (!!value.match(/^[^\p{L}\d]*$/gu)) return SectionsStrength.EASY;
 
   // letters only
-  if (!!value.match(/^[a-zA-Z]*$/)) return SectionsStrength.EASY;
+  if (!!value.match(/^[\p{L}]*$/gu)) return SectionsStrength.EASY;
 
   // digits only
-  if (!!value.match(/^[\d]*$/)) return SectionsStrength.EASY;
+  if (!!value.match(/^[\d]*$/gu)) return SectionsStrength.EASY;
 
   //---MEDIUM---
 
   // letters-digits
-  if (!!value.match(/^[a-zA-Z\d]*$/)) return SectionsStrength.MEDIUM;
+  if (!!value.match(/^[\p{L}\d]*$/gu)) return SectionsStrength.MEDIUM;
 
   // symbols-digits
   if (
-    !value.match(/[a-zA-Z]/) &&
-    !!value.match(/[\d]/) &&
-    !!value.match(/[^A-Za-z0-9]/)
+    !value.match(/[\p{L}]/gu) &&
+    !!value.match(/[\d]/gu) &&
+    !!value.match(/[^\p{L}\d]/gu)
   )
     return SectionsStrength.MEDIUM;
 
   // symbols-letters
   if (
-    !value.match(/[\d]/) &&
-    !!value.match(/[a-zA-Z]/) &&
-    !!value.match(/[^A-Za-z0-9]/)
+    !value.match(/[\d]/gu) &&
+    !!value.match(/[\p{L}]/gu) &&
+    !!value.match(/[^\p{L}\d]/gu)
   )
     return SectionsStrength.MEDIUM;
 
@@ -40,9 +40,9 @@ export function validatePassword(value: string): SectionsStrength {
 
   // symbols-letters-digits
   if (
-    !!value.match(/[\d]/) &&
-    !!value.match(/[a-zA-Z]/) &&
-    !!value.match(/[^A-Za-z0-9]/)
+    !!value.match(/[\d]/gu) &&
+    !!value.match(/[\p{L}]/gu) &&
+    !!value.match(/[^\p{L}\d]/gu)
   )
     return SectionsStrength.HARD;
 
