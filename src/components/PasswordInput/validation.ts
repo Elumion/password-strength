@@ -2,8 +2,10 @@ import { SectionsStrength } from "../PasswordStrengthSections/index.types";
 
 export function validatePassword(value: string): SectionsStrength {
   if (value.length === 0) return SectionsStrength.EMPTY;
+  if (value.length < 8) return SectionsStrength.SHORT;
 
   //---EASY---
+
   // symbols only
   if (!!value.match(/^[^A-Za-z0-9]*$/)) return SectionsStrength.EASY;
 
@@ -44,5 +46,5 @@ export function validatePassword(value: string): SectionsStrength {
   )
     return SectionsStrength.HARD;
 
-  return SectionsStrength.EMPTY;
+  return SectionsStrength.SHORT;
 }
