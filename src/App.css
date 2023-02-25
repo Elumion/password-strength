@@ -9,9 +9,10 @@ body {
 
 .form-password-checker {
   margin: 20px auto;
-  padding: 20px 15px 30px;
+  padding: 100px 15px 100px;
   width: fit-content;
   min-width: 400px;
   border: 1px solid #4e4e4e;
+  border-radius: 15px;
   background-color: #d3d3d3;
 }
