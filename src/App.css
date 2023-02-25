@@ -1,5 +1,6 @@
 body {
   background-color: #474747;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .global-container {
@@ -8,7 +9,7 @@ body {
 
 .form-password-checker {
   margin: 20px auto;
-  padding: 10px 15px;
+  padding: 20px 15px 30px;
   width: fit-content;
   min-width: 400px;
   border: 1px solid #4e4e4e;
